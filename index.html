@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10091f">
+<meta name="description" content="NOVA GAMING؛ دنیای اخبار و بازی‌های ویدیویی">
+<title>NOVA GAMING | اخبار گیمینگ</title>
+
+<style>
+:root {
+  --bg: #0d0917;
+  --panel: #191126;
+  --purple: #a855f7;
+  --yellow: #ffe45e;
+  --text: #f7f4ff;
+  --muted: #b6adc9;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Tahoma, Arial, sans-serif;
+  line-height: 1.9;
+}
+a { color: inherit; text-decoration: none; }
+.container { width: min(1100px, 92%); margin: auto; }
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #10091ff5;
+  border-bottom: 1px solid #332044;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+}
+.logo {
+  direction: ltr;
+  font-size: 23px;
+  font-weight: 900;
+}
+.logo span { color: var(--yellow); }
+nav { display: flex; gap: 18px; }
+nav a { color: var(--muted); font-size: 13px; }
+nav a:hover { color: var(--yellow); }
+
+.hero {
+  padding: 75px 0;
+  background:
+    radial-gradient(ellipse at 20% 20%, #582184 0, transparent 45%),
+    linear-gradient(135deg, #10091f, #201032);
+  border-bottom: 1px solid #332044;
+}
+.badge {
+  display: inline-block;
+  color: var(--yellow);
+  border: 1px solid var(--purple);
+  border-radius: 25px;
+  padding: 3px 12px;
+  font-size: 12px;
+}
+h1 {
+  font-size: clamp(36px, 7vw, 65px);
+  line-height: 1.3;
+  margin: 18px 0;
+}
+h1 span { color: var(--yellow); }
+.hero p { max-width: 600px; color: var(--muted); }
+.button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 22px;
+  border-radius: 9px;
+  background: var(--yellow);
+  color: #160d20;
+  font-weight: bold;
+}
+section { padding: 38px 0; }
+.section-title { margin-bottom: 20px; }
+.section-title h2 { margin: 0; font-size: 24px; }
+.section-title span { color: var(--yellow); }
+
+.search {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 13px;
+  border: 1px solid #3b2a51;
+  border-radius: 10px;
+  background: var(--panel);
+  color: white;
+  font: inherit;
+}
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 22px;
+}
+.chip {
+  border: 1px solid #3b2a51;
+  border-radius: 25px;
+  padding: 7px 15px;
+  background: var(--panel);
+  color: var(--muted);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+.chip.active, .chip:hover {
+  background: var(--purple);
+  color: white;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.card {
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid #302044;
+  border-radius: 15px;
+  transition: .2s;
+}
+.card:hover { transform: translateY(-4px); border-color: var(--purple); }
+.cover {
+  height: 155px;
+  display: grid;
+  place-items: center;
+  font-size: 58px;
+  background: linear-gradient(135deg, #3a1857, #171126);
+}
+.cover.gold { background: linear-gradient(135deg, #665019, #21172a); }
+.cover.blue { background: linear-gradient(135deg, #17415a, #21172a); }
+.cover.pink { background: linear-gradient(135deg, #65234d, #21172a); }
+.card-body { padding: 17px; }
+.tag { color: var(--yellow); font-size: 12px; }
+.card h3 { font-size: 17px; line-height: 1.8; }
+.card p { color: var(--muted); font-size: 13px; }
+.meta { color: #9b8daf; font-size: 11px; }
+.empty { display: none; padding: 25px; text-align: center; color: var(--muted); }
+
+.about {
+  padding: 25px;
+  border: 1px solid #302044;
+  border-radius: 15px;
+  background: linear-gradient(120deg, #1c1230, #120d20);
+}
+.about p { color: var(--muted); }
+footer {
+  border-top: 1px solid #302044;
+  padding: 25px 0;
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+}
+footer strong { color: var(--yellow); }
+
+@media(max-width:760px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .nav { flex-wrap: wrap; }
+  .hero { padding: 50px 0; }
+  .cover { height: 120px; }
+}
+@media(max-width:450px) {
+  .grid { grid-template-columns: 1fr; }
+  nav { width: 100%; justify-content: space-between; }
+  .cover { height: 150px; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">NOVA <span>GAMING</span></a>
+    <nav>
+      <a href="#home">خانه</a>
+      <a href="#news">اخبار</a>
+      <a href="#about">درباره ما</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container">
+    <span class="badge">🎮 دنیای بازی، یک قدم جلوتر</span>
+    <h1>به دنیای<br><span>NOVA GAMING</span><br>خوش اومدی!</h1>
+    <p>خبرهای گیمینگ، فورتنایت، کالاف دیوتی و بازی‌های جدید رو دنبال کن.</p>
+    <a class="button" href="#news">مشاهده مطالب ↓</a>
+  </div>
+</section>
+
+<section id="news">
+  <div class="container">
+    <div class="section-title">
+      <h2>آخرین <span>مطالب</span></h2>
+    </div>
+
+    <input class="search" id="search" type="search"
+      placeholder="🔍 جست‌وجو بین مطالب..."
+      aria-label="جست‌وجو">
+
+    <div class="categories">
+      <button class="chip active" data-category="همه">همه</button>
+      <button class="chip" data-category="فورتنایت">فورتنایت</button>
+      <button class="chip" data-category="کالاف دیوتی">کالاف دیوتی</button>
+      <button class="chip" data-category="گیمینگ">گیمینگ</button>
+      <button class="chip" data-category="معرفی بازی">معرفی بازی</button>
+    </div>
+
+    <div class="grid" id="newsGrid"></div>
+    <div class="empty" id="empty">مطلبی پیدا نشد!</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="about">
+      <h2>درباره <span style="color:#ffe45e">NOVA GAMING</span></h2>
+      <p>اینجا برای گیمرها ساخته شده؛ از فورتنایت و کالاف دیوتی تا بازی‌های داستانی و اتفاقات صنعت گیم.</p>
+      <p>این نسخه اولیه سایت است. مطالب فعلی نمونه هستند و برای نمایش اخبار روز باید به منبع خبری متصل شویم.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <strong>NOVA GAMING</strong> — ساخته‌شده برای گیمرها 🎮
+    <br>© <span id="year"></span> NOVA GAMING
+  </div>
+</footer>
+
+<script>
+const articles = [
+  {
+    title: "اخبار و اتفاقات دنیای فورتنایت",
+    category: "فورتنایت",
+    icon: "🎯",
+    color: "",
+    desc: "مطالب مرتبط با دنیای Fortnite و بتل رویال.",
+    date: "بخش فورتنایت"
+  },
+  {
+    title: "کالاف دیوتی؛ دنیای اکشن",
+    category: "کالاف دیوتی",
+    icon: "🎮",
+    color: "gold",
+    desc: "معرفی و بررسی مجموعه Call of Duty.",
+    date: "بخش کالاف دیوتی"
+  },
+  {
+    title: "بازی‌های داستانی جذاب",
+    category: "معرفی بازی",
+    icon: "🕹️",
+    color: "blue",
+    desc: "با بازی‌های داستانی و ماجراجویی آشنا شو.",
+    date: "معرفی بازی"
+  },
+  {
+    title: "اتفاقات صنعت بازی‌های ویدیویی",
+    category: "گیمینگ",
+    icon: "🌌",
+    color: "pink",
+    desc: "فناوری‌ها و اتفاقات دنیای گیمینگ.",
+    date: "دنیای گیم"
+  },
+  {
+    title: "راهنمای شروع برای گیمرها",
+    category: "گیمینگ",
+    icon: "⚡",
+    color: "blue",
+    desc: "نکته‌هایی برای انتخاب و تجربه بازی‌ها.",
+    date: "راهنمای گیمینگ"
+  },
+  {
+    title: "بازی آنلاین یا داستانی؟",
+    category: "معرفی بازی",
+    icon: "🏆",
+    color: "gold",
+    desc: "با تفاوت این دو نوع تجربه آشنا شو.",
+    date: "بررسی بازی"
+  }
+];
+
+const grid = document.getElementById("newsGrid");
+const search = document.getElementById("search");
+const empty = document.getElementById("empty");
+let selectedCategory = "همه";
+
+function renderArticles() {
+  const query = search.value.trim().toLowerCase();
+
+  const filtered = articles.filter(article => {
+    const categoryMatches =
+      selectedCategory === "همه" ||
+      article.category === selectedCategory;
+
+    const searchable = (
+      article.title + " " +
+      article.category + " " +
+      article.desc
+    ).toLowerCase();
+
+    return categoryMatches && searchable.includes(query);
+  });
+
+  grid.innerHTML = filtered.map(article => `
+    <article class="card">
+      <div class="cover ${article.color}">${article.icon}</div>
+      <div class="card-body">
+        <span class="tag">${article.category}</span>
+        <h3>${article.title}</h3>
+        <p>${article.desc}</p>
+        <div class="meta">${article.date}</div>
+      </div>
+    </article>
+  `).join("");
+
+  empty.style.display = filtered.length ? "none" : "block";
+}
+
+document.querySelectorAll(".chip").forEach(button => {
+  button.addEventListener("click", () => {
+    document.querySelectorAll(".chip").forEach(chip =>
+      chip.classList.remove("active")
+    );
+
+    button.classList.add("active");
+    selectedCategory = button.dataset.category;
+    renderArticles();
+  });
+});
+
+search.addEventListener("input", renderArticles);
+document.getElementById("year").textContent = new Date().getFullYear();
+renderArticles();
+</script>
+</body>
+  </html>
