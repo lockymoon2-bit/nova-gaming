@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#10091f">
-<meta name="description" content="NOVA GAMING؛ دنیای اخبار و بازی‌های ویدیویی">
+<meta name="description" content="NOVA GAMING؛ جدیدترین اخبار بازی‌های ویدیویی">
 <title>NOVA GAMING | اخبار گیمینگ</title>
 
 <style>
@@ -53,7 +53,7 @@ nav a { color: var(--muted); font-size: 13px; }
 nav a:hover { color: var(--yellow); }
 
 .hero {
-  padding: 75px 0;
+  padding: 65px 0;
   background:
     radial-gradient(ellipse at 20% 20%, #582184 0, transparent 45%),
     linear-gradient(135deg, #10091f, #201032);
@@ -69,7 +69,7 @@ nav a:hover { color: var(--yellow); }
 }
 h1 {
   font-size: clamp(36px, 7vw, 65px);
-  line-height: 1.3;
+  line-height: 1.4;
   margin: 18px 0;
 }
 h1 span { color: var(--yellow); }
@@ -130,12 +130,15 @@ section { padding: 38px 0; }
   border-radius: 15px;
   transition: .2s;
 }
-.card:hover { transform: translateY(-4px); border-color: var(--purple); }
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--purple);
+}
 .cover {
-  height: 155px;
+  height: 130px;
   display: grid;
   place-items: center;
-  font-size: 58px;
+  font-size: 52px;
   background: linear-gradient(135deg, #3a1857, #171126);
 }
 .cover.gold { background: linear-gradient(135deg, #665019, #21172a); }
@@ -143,11 +146,42 @@ section { padding: 38px 0; }
 .cover.pink { background: linear-gradient(135deg, #65234d, #21172a); }
 .card-body { padding: 17px; }
 .tag { color: var(--yellow); font-size: 12px; }
-.card h3 { font-size: 17px; line-height: 1.8; }
+.card h3 { font-size: 16px; line-height: 1.9; }
 .card p { color: var(--muted); font-size: 13px; }
 .meta { color: #9b8daf; font-size: 11px; }
-.empty { display: none; padding: 25px; text-align: center; color: var(--muted); }
-
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  background: var(--yellow);
+  color: #160d20;
+  padding: 7px 12px;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.status {
+  padding: 20px;
+  text-align: center;
+  color: var(--muted);
+  background: var(--panel);
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+.status button {
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 16px;
+  background: var(--yellow);
+  color: #160d20;
+  font: inherit;
+  cursor: pointer;
+}
+.empty {
+  display: none;
+  padding: 25px;
+  text-align: center;
+  color: var(--muted);
+}
 .about {
   padding: 25px;
   border: 1px solid #302044;
@@ -167,21 +201,22 @@ footer strong { color: var(--yellow); }
 @media(max-width:760px) {
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
   .nav { flex-wrap: wrap; }
-  .hero { padding: 50px 0; }
-  .cover { height: 120px; }
+  .hero { padding: 45px 0; }
+  .cover { height: 110px; }
 }
 @media(max-width:450px) {
   .grid { grid-template-columns: 1fr; }
   nav { width: 100%; justify-content: space-between; }
-  .cover { height: 150px; }
+  .cover { height: 140px; }
 }
 </style>
 </head>
 
 <body>
+
 <header>
   <div class="container nav">
-    <a href="#" class="logo">NOVA <span>GAMING</span></a>
+    <a href="#home" class="logo">NOVA <span>GAMING</span></a>
     <nav>
       <a href="#home">خانه</a>
       <a href="#news">اخبار</a>
@@ -195,31 +230,41 @@ footer strong { color: var(--yellow); }
   <div class="container">
     <span class="badge">🎮 دنیای بازی، یک قدم جلوتر</span>
     <h1>به دنیای<br><span>NOVA GAMING</span><br>خوش اومدی!</h1>
-    <p>خبرهای گیمینگ، فورتنایت، کالاف دیوتی و بازی‌های جدید رو دنبال کن.</p>
-    <a class="button" href="#news">مشاهده مطالب ↓</a>
+    <p>
+      جدیدترین مطالب و خبرهای دنیای بازی‌های ویدیویی؛
+      از فورتنایت و کالاف دیوتی تا بازی‌های بزرگ و موردانتظار.
+    </p>
+    <a class="button" href="#news">مشاهده اخبار ↓</a>
   </div>
 </section>
 
 <section id="news">
   <div class="container">
     <div class="section-title">
-      <h2>آخرین <span>مطالب</span></h2>
+      <h2>آخرین <span>اخبار گیمینگ</span></h2>
     </div>
 
-    <input class="search" id="search" type="search"
-      placeholder="🔍 جست‌وجو بین مطالب..."
-      aria-label="جست‌وجو">
+    <input
+      class="search"
+      id="search"
+      type="search"
+      placeholder="🔍 جست‌وجو بین اخبار..."
+      aria-label="جست‌وجو بین اخبار">
 
     <div class="categories">
-      <button class="chip active" data-category="همه">همه</button>
+      <button class="chip active" data-category="همه">همه اخبار</button>
       <button class="chip" data-category="فورتنایت">فورتنایت</button>
       <button class="chip" data-category="کالاف دیوتی">کالاف دیوتی</button>
       <button class="chip" data-category="گیمینگ">گیمینگ</button>
       <button class="chip" data-category="معرفی بازی">معرفی بازی</button>
     </div>
 
+    <div id="status" class="status">
+      در حال دریافت اخبار... 🎮
+    </div>
+
     <div class="grid" id="newsGrid"></div>
-    <div class="empty" id="empty">مطلبی پیدا نشد!</div>
+    <div class="empty" id="empty">خبری پیدا نشد.</div>
   </div>
 </section>
 
@@ -227,8 +272,14 @@ footer strong { color: var(--yellow); }
   <div class="container">
     <div class="about">
       <h2>درباره <span style="color:#ffe45e">NOVA GAMING</span></h2>
-      <p>اینجا برای گیمرها ساخته شده؛ از فورتنایت و کالاف دیوتی تا بازی‌های داستانی و اتفاقات صنعت گیم.</p>
-      <p>این نسخه اولیه سایت است. مطالب فعلی نمونه هستند و برای نمایش اخبار روز باید به منبع خبری متصل شویم.</p>
+      <p>
+        NOVA GAMING برای دوست‌داران بازی‌های ویدیویی ساخته شده است.
+        هدف ما دسترسی راحت به خبرها و مطالب دنیای گیمینگ است.
+      </p>
+      <p>
+        خبرها از منابع اصلی دریافت می‌شوند. برای مطالعه کامل هر خبر،
+        روی دکمه مطالعه خبر بزنید تا به منبع اصلی بروید.
+      </p>
     </div>
   </div>
 </section>
@@ -242,61 +293,79 @@ footer strong { color: var(--yellow); }
 </footer>
 
 <script>
-const articles = [
-  {
-    title: "اخبار و اتفاقات دنیای فورتنایت",
-    category: "فورتنایت",
-    icon: "🎯",
-    color: "",
-    desc: "مطالب مرتبط با دنیای Fortnite و بتل رویال.",
-    date: "بخش فورتنایت"
-  },
-  {
-    title: "کالاف دیوتی؛ دنیای اکشن",
-    category: "کالاف دیوتی",
-    icon: "🎮",
-    color: "gold",
-    desc: "معرفی و بررسی مجموعه Call of Duty.",
-    date: "بخش کالاف دیوتی"
-  },
-  {
-    title: "بازی‌های داستانی جذاب",
-    category: "معرفی بازی",
-    icon: "🕹️",
-    color: "blue",
-    desc: "با بازی‌های داستانی و ماجراجویی آشنا شو.",
-    date: "معرفی بازی"
-  },
-  {
-    title: "اتفاقات صنعت بازی‌های ویدیویی",
-    category: "گیمینگ",
-    icon: "🌌",
-    color: "pink",
-    desc: "فناوری‌ها و اتفاقات دنیای گیمینگ.",
-    date: "دنیای گیم"
-  },
-  {
-    title: "راهنمای شروع برای گیمرها",
-    category: "گیمینگ",
-    icon: "⚡",
-    color: "blue",
-    desc: "نکته‌هایی برای انتخاب و تجربه بازی‌ها.",
-    date: "راهنمای گیمینگ"
-  },
-  {
-    title: "بازی آنلاین یا داستانی؟",
-    category: "معرفی بازی",
-    icon: "🏆",
-    color: "gold",
-    desc: "با تفاوت این دو نوع تجربه آشنا شو.",
-    date: "بررسی بازی"
-  }
-];
-
 const grid = document.getElementById("newsGrid");
 const search = document.getElementById("search");
 const empty = document.getElementById("empty");
+const statusBox = document.getElementById("status");
+
 let selectedCategory = "همه";
+let articles = [];
+
+const feeds = [
+  {
+    name: "زومجی",
+    url: "https://www.zoomg.ir/feed/"
+  },
+  {
+    name: "گیمفا",
+    url: "https://gamefa.com/feed/"
+  }
+];
+
+function cleanText(text) {
+  const div = document.createElement("div");
+  div.innerHTML = text || "";
+  return (div.textContent || "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function shorten(text, max = 180) {
+  return text.length > max
+    ? text.slice(0, max).trim() + "..."
+    : text;
+}
+
+function getCategory(text) {
+  const t = text.toLowerCase();
+
+  if (/fortnite|فورتنایت/.test(t))
+    return "فورتنایت";
+
+  if (/call of duty|کالاف دیوتی|کال آو دیوتی|وارزون|warzone|ندای وظیفه/.test(t))
+    return "کالاف دیوتی";
+
+  if (/معرفی بازی|بررسی بازی|گیم.?پلی/.test(t))
+    return "معرفی بازی";
+
+  return "گیمینگ";
+}
+
+function getIcon(category) {
+  if (category === "فورتنایت") return "🎯";
+  if (category === "کالاف دیوتی") return "🎮";
+  if (category === "معرفی بازی") return "🕹️";
+  return "🌌";
+}
+
+function getColor(category) {
+  if (category === "فورتنایت") return "";
+  if (category === "کالاف دیوتی") return "gold";
+  if (category === "معرفی بازی") return "blue";
+  return "pink";
+}
+
+function safeLink(value) {
+  try {
+    const url = new URL(value);
+
+    if (url.protocol === "https:" || url.protocol === "http:") {
+      return url.href;
+    }
+  } catch (error) {}
+
+  return "";
+}
 
 function renderArticles() {
   const query = search.value.trim().toLowerCase();
@@ -306,35 +375,145 @@ function renderArticles() {
       selectedCategory === "همه" ||
       article.category === selectedCategory;
 
-    const searchable = (
+    const text = (
       article.title + " " +
       article.category + " " +
-      article.desc
+      article.desc + " " +
+      article.source
     ).toLowerCase();
 
-    return categoryMatches && searchable.includes(query);
+    return categoryMatches && text.includes(query);
   });
 
   grid.innerHTML = filtered.map(article => `
     <article class="card">
-      <div class="cover ${article.color}">${article.icon}</div>
+      <div class="cover ${article.color}">
+        ${article.icon}
+      </div>
+
       <div class="card-body">
         <span class="tag">${article.category}</span>
         <h3>${article.title}</h3>
         <p>${article.desc}</p>
-        <div class="meta">${article.date}</div>
+
+        <div class="meta">
+          ${article.source} | ${article.date}
+        </div>
+
+        <a class="read-more"
+           href="${article.link}"
+           target="_blank"
+           rel="noopener noreferrer">
+          مطالعه خبر ←
+        </a>
       </div>
     </article>
   `).join("");
 
   empty.style.display = filtered.length ? "none" : "block";
+
+  if (!filtered.length) {
+    empty.textContent = articles.length
+      ? "خبری مطابق جست‌وجوی شما پیدا نشد."
+      : "خبری برای نمایش موجود نیست.";
+  }
+}
+
+async function loadFeed(feed) {
+  const api =
+    "https://api.rss2json.com/v1/api.json?rss_url=" +
+    encodeURIComponent(feed.url);
+
+  const response = await fetch(api);
+
+  if (!response.ok) {
+    throw new Error("خطا در اتصال به سرویس اخبار");
+  }
+
+  const data = await response.json();
+
+  if (data.status !== "ok" || !Array.isArray(data.items)) {
+    throw new Error("فید خبری در دسترس نیست");
+  }
+
+  return data.items.map(item => {
+    const title = cleanText(item.title);
+    const description = cleanText(
+      item.description || item.content
+    );
+    const link = safeLink(item.link);
+
+    if (!title || !link) return null;
+
+    const category = getCategory(title + " " + description);
+
+    return {
+      title,
+      desc: shorten(description) ||
+        "برای مشاهده جزئیات، خبر را در منبع اصلی بخوانید.",
+      category,
+      icon: getIcon(category),
+      color: getColor(category),
+      source: feed.name,
+      link,
+      date: item.pubDate
+        ? new Date(item.pubDate).toLocaleDateString("fa-IR")
+        : "خبر گیمینگ"
+    };
+  }).filter(Boolean);
+}
+
+async function loadNews() {
+  statusBox.style.display = "block";
+  statusBox.textContent = "در حال دریافت آخرین اخبار... 🎮";
+  grid.innerHTML = "";
+  empty.style.display = "none";
+
+  const results = await Promise.allSettled(
+    feeds.map(feed => loadFeed(feed))
+  );
+
+  const collected = [];
+
+  results.forEach(result => {
+    if (result.status === "fulfilled") {
+      collected.push(...result.value);
+    }
+  });
+
+  const unique = new Map();
+
+  collected.forEach(article => {
+    if (!unique.has(article.link)) {
+      unique.set(article.link, article);
+    }
+  });
+
+  articles = [...unique.values()];
+
+  if (articles.length > 0) {
+    statusBox.style.display = "none";
+    renderArticles();
+  } else {
+    statusBox.innerHTML = `
+      <p>فعلاً نتونستیم اخبار رو دریافت کنیم.</p>
+      <p>ممکنه سرویس خبری موقتاً در دسترس نباشه.</p>
+      <button id="retryButton">تلاش دوباره</button>
+    `;
+
+    document.getElementById("retryButton")
+      .addEventListener("click", loadNews);
+
+    grid.innerHTML = "";
+    empty.style.display = "none";
+  }
 }
 
 document.querySelectorAll(".chip").forEach(button => {
   button.addEventListener("click", () => {
-    document.querySelectorAll(".chip").forEach(chip =>
-      chip.classList.remove("active")
-    );
+    document.querySelectorAll(".chip").forEach(chip => {
+      chip.classList.remove("active");
+    });
 
     button.classList.add("active");
     selectedCategory = button.dataset.category;
@@ -343,8 +522,12 @@ document.querySelectorAll(".chip").forEach(button => {
 });
 
 search.addEventListener("input", renderArticles);
-document.getElementById("year").textContent = new Date().getFullYear();
-renderArticles();
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+loadNews();
 </script>
+
 </body>
   </html>
